@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.no-marg {
+  margin: 0;
+}
+
+.no-pad {
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.in-bl {
+  display: inline-block;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
