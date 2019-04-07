@@ -1,24 +1,37 @@
-var myColorCalc = new ColorsCalc();
+var myColorCalc = new ColorsCalc(),
+    reg = /[а-яА-ЯёЁ]/g;
 
 rgbValue.onkeydown = function (e) {
+    if (this.value.search(reg) !=  -1) {
+        this.value = this.value.replace(reg, '');
+    }
     if (e.key === 'Enter') {
         resultHex.onclick();
     }
 };
 
 hexValue.onkeydown = function (e) {
+    if (this.value.search(reg) !=  -1) {
+        this.value = this.value.replace(reg, '');
+    }
     if (e.key === 'Enter') {
         resultRgb.onclick();
     }
 };
 
 firstVal.onkeydown = function(e) {
+    if (this.value.search(reg) !=  -1) {
+        this.value = this.value.replace(reg, '');
+    }
     if (e.key === 'Enter') {
         resultAverage.onclick();
     }
 };
 
 secondVal.onkeydown = function(e) {
+    if (this.value.search(reg) !=  -1) {
+        this.value = this.value.replace(reg, '');
+    }
     if (e.key === 'Enter') {
         resultAverage.onclick();
     }
