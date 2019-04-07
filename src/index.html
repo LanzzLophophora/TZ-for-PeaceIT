@@ -1,25 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/commonStyles.css">
+	<title>ToDo list</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
-	<header>
-
-	</header>
+<header class="header d-flex">
+	<a href="https://school.peace-it.info/courses/" class="logo" target="_blank"></a>
+	<nav class="position-relative">
+		<input type="checkbox" name="nav" id="check-menu" class="d-none">
+		<label for="check-menu" class=" w-100 h-100 text-uppercase">menu</label>
+		<div class="burger-line first-line position-absolute"></div>
+		<div class="burger-line second-line position-absolute"></div>
+		<div class="burger-line third-line position-absolute"></div>
+		<div class="burger-line fourth-line position-absolute"></div>
+		<div class="menu text-uppercase d-flex justify-content-between align-content-center default-color">
+			<span>
+				<a href="toDoList.html">ToDo list</a>
+			</span>
+			<span>
+				<a href="elements.html">Elements form style</a>
+			</span>
+			<span>
+				<a href="colors.html">Colors</a>
+			</span>
+			<span>
+				My another works
+				<span class="sub-item">
+					<span>
+						<a href="http://templatebino.zzz.com.ua/" target="_blank">Bino</a>
+					</span>
+					<span>
+						<a href="https://daisy000webhost.000webhostapp.com/" target="_blank">Daysi</a>
+					</span>
+				</span>
+			</span>
+		</div>
+	</nav>
+</header>
+<main class="d-flex main">
 	<section>
-		<main>
-
-		</main>
+		<div>
+			<h3>Задание JS:</h3>
+			<p>
+				Сделать to do list
+				Стили делать не обязательно, обязателен функционал, можно использовать jQuery / React/Redux и прочие JS библиотеки/фреймворки или же без них.
+				Можно ввести имя задания в input, нажать кнопку "добавить" и в списке заданий появиться новое задание.
+				Задание можно отметить выполненным или удалить.
+			</p>
+		</div>
+		<div>
+			<h3>Задание CSS:</h3>
+			<span>1)Стилизовать элементы форм:</span>
+			<ul>
+				<li>- Чекбоксы</li>
+				<li>- Радиокнопки</li>
+				<li>- Текстовые поля</li>
+				<li>- Выпадающие списки</li>
+				<li>- Input с типом 'range'(Не обязательно)</li>
+			</ul>
+			(Можно использовать JS для стилизации, если таков требуется)
+			<p>
+				2)Responsive верхняя панель(header)
+				Верхнее горизонтальное меню для ПК, которое на мобильных и планшетах становится вертикальным.
+				Контент не имеет значения, суть работы заключается в верстке отзывчивого меню, реагирующего на различные размеры экрана
+				можно использовать js/jquery/bootstrap/media/css
+			</p>
+		</div>
+		<div>
+			<h3>Сделать класс для работы с цветами</h3>
+			<p>
+				Класс должен уметь:
+				1)Функция, которая принимает 2 цвета - возвращает средний цвет
+				2)Функция, которая принимает цвет в формате RGB - возвращает в формате HEX
+				3)Функция, которая принимает цвет в формате HEX - возвращает в формате RGB
+			</p>
+		</div>
 	</section>
-	<footer>
-
-	</footer>
-
-	<script src="js/main.js"></script>
+</main>
 </body>
 </html>

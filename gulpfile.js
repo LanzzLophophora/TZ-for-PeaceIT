@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     cleanCss = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
-    stylelint = require('stylelint'),
+    // stylelint = require('stylelint'),
     gulpStylelint = require('gulp-stylelint');
 
 gulp.task('sass', () => {

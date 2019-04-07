@@ -1,0 +1,392 @@
+section[id='elements'] {
+    width: 80%;
+    max-width: 1200px;
+    align-items: center;
+    flex-direction: column;
+
+    input {
+        display: none;
+    }
+
+    .exercise {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 25px auto;
+        border: 3px solid gray;
+        background: rgba(255, 255, 255, 0.11);
+
+        .title {
+            text-decoration: underline;
+            font-size: 2rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .title:hover {
+            cursor: pointer;
+        }
+
+        .one-example {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .exapmles {
+            display: none;
+            flex-direction: column;
+        }
+    }
+
+    .chexbox-examples {
+        label {
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+            padding: 2px;
+            cursor: pointer;
+
+            div {
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                border-radius: 100%;
+                display: none;
+            }
+        }
+
+        input:checked + div {
+            display: block;
+        }
+
+        .sq {
+            background-color: darkblue;
+            border: 1px solid #333;
+        }
+
+        .circle {
+            background-color: green;
+            border-radius: 100%;
+
+            div {
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                background-color: unset;
+            }
+        }
+
+        a {
+            font-size: large;
+            margin: 5px;
+        }
+        
+        a:hover {
+            color: #fff;
+        }
+    }
+
+    .radios {
+        .one-example {
+            label {
+                width: 20px;
+                height: 20px;
+                background-color: #73c79f;
+                display: flex;
+                margin: 10px;
+                padding: 2px;
+                cursor: pointer;
+
+                div {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #333;
+                    display: none;
+                }
+            }
+
+            [type = 'radio']:checked + div {
+                display: block;
+            }
+        }
+
+        .another-example {
+            //min-width: 640px;
+
+            [id = 'rd1']:checked ~ [data-tab = '1'],
+            [id = 'rd2']:checked ~ [data-tab = '2'],
+            [id = 'rd3']:checked ~ [data-tab = '3'] {
+                display: block;
+            }
+
+            [name='btn']:checked + label {
+                background-color: #fff;
+                color: #333;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+                max-width: 640px;
+                border: 1px solid #333;
+                margin: auto;
+
+                label {
+                    flex-grow: 1;
+                    background-color: #333;
+                    cursor: pointer;
+                }
+            }
+
+            .width100 {
+                width: 100%;
+            }
+
+        }
+    }
+
+    .text-fields {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        input,
+        textarea {
+            display: block;
+            outline: none;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 10px;
+        }
+
+        input {
+            min-height: 25px;
+            border: 1px solid $main-color;
+        }
+
+        textarea {
+            resize: none;
+            width: 50%;
+            background: silver;
+            color: #0E9FCC;
+            text-shadow: 1px 1px black;
+            font-size: 2rem;
+        }
+    }
+
+    .select-block {
+        padding: 15px 0;
+        width: 90%;
+        margin: 20px auto;
+        border-radius: 15px;
+        text-align: center;
+
+        h5 {
+            background-color: rgba(0, 0, 0, 0.3);
+            margin: 5px auto;
+        }
+
+        .one-example,
+        .another-example {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            margin: 20px auto;
+        }
+
+        .one-example {
+            .custom-select {
+                width: 100%;
+                height: 35px;
+                background-color: white;
+                position: relative;
+
+                select[name='customSelect'] {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 20px;
+                    background: none;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    font-size: 1.4rem;
+                    color: $main-color;
+                }
+                select[name='customSelect']:focus {
+                    outline: none;
+                    border-color: $main-color;
+                }
+                select[name='customSelect']:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .custom-select::before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 33px;
+                background-color: #ccc;
+                pointer-events: none;
+                position: absolute;
+                top: 1px;
+                right: 30px;
+            }
+
+            .custom-select::after {
+                content: '';
+                border-style: solid;
+                border-width: 5px 5px 0 5px;
+                border-color: #333 transparent transparent transparent;
+                pointer-events: none;
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                margin-top: -2px;
+            }
+        }
+
+        .another-example {
+            [id = 'select'] {
+                display: none;
+            }
+
+            h3 {
+                text-align: center;
+                color: #46f7ff;
+                border: 2px solid silver;
+                cursor: pointer;
+            }
+
+            .accordion {
+                min-height: 120px;
+            }
+
+            .accordion-item {
+                width: 100%;
+                border-radius: 5px;
+                background: rgba(0, 0, 0, 0.35);
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                .my-option {
+                    width: 100%;
+                    cursor: pointer;
+                    padding: 2px;
+                    border: 2px solid silver;
+                }
+            }
+        }
+    }
+
+    .range {
+        h5 {
+            background-color: rgba(0, 0, 0, 0.3);
+            margin: 5px auto;
+        }
+
+        .one-example,
+        .another-example {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            margin: 20px auto;
+            text-align: center;
+            align-items: center;
+        }
+        .one-example {
+            input {
+                display: block;
+                outline: none;
+            }
+
+            .custom-range {
+                -webkit-appearance: none;
+                display: block;
+                margin: 20px auto;
+                cursor: pointer;
+                width: 250px;
+                height: 7px;
+                background: linear-gradient(to right bottom, #d0d0d0 70%, #d5d3d3 70%);
+                border-radius: 4px;
+                box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.40), 0 1px 0 rgba(255, 255, 255, 1);
+            }
+
+            .custom-range::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 28px;
+                height: 28px;
+                border-radius: 28px;
+                background-image: url('../img/brilliant.png');
+                background-position: center;
+                background-size: cover;
+            }
+
+            .custom-range::-moz-range-track {
+                -webkit-appearance: none;
+                display: block;
+                margin: 20px auto;
+                cursor: pointer;
+                width: 250px;
+                height: 7px;
+                background: linear-gradient(to right bottom, #d0d0d0 70%, #d5d3d3 70%);
+                border-radius: 4px;
+                box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.40), 0 1px 0 rgba(255, 255, 255, 1);
+            }
+
+            .custom-range::-moz-range-thumb {
+                -moz-appearance: none;
+                width: 28px;
+                height: 28px;
+                border-radius: 28px;
+                background-image: url('../img/brilliant.png');
+                background-position: center;
+                background-size: cover;
+            }
+        }
+        .another-example {
+            [id = rangeBox] {
+                width: 320px;
+                height: 10px;
+                background: $main-color;
+                position: relative;
+                cursor: pointer;
+                box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.6);
+            }
+
+            [id = rangeBar] {
+                background-color: #fff;
+                width: 15px;
+                height: 20px;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                position: absolute;
+                cursor: pointer;
+                box-shadow: 1px 1px black;
+            }
+            span {
+                margin: 20px auto;
+                padding: 10px 15px;
+            }
+        }
+    }
+    input[id='chexboxExamples']:checked ~ .chexbox-examples {
+        display: flex;
+    }
+    input[id='radioExamples']:checked ~ .radio-examples {
+        display: flex;
+    }
+    input[id='textFields']:checked ~ .text-fields {
+        display: flex;
+    }
+    input[id='selectBlock']:checked ~ .select-block {
+        display: flex;
+    }
+    input[id='range']:checked ~ .range {
+        display: flex;
+    }
+}
+
+

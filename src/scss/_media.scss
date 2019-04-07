@@ -1,0 +1,124 @@
+@media (max-width: 780px) {
+    .header {
+        margin-top: 15px;
+        .logo {
+            width: 15%;
+            padding-bottom: 15%;
+        }
+
+        nav {
+            width: 80%;
+            .menu {
+                flex-direction: column;
+                width: 40%;
+                margin: auto;
+                margin-right: 30px;
+                text-align: right;
+
+                span .sub-item {
+                    left: 0;
+                    top: 0;
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+    section[id=toDo],
+    section[id=elements] {
+        padding-top: 7%;
+    }
+    section[id='colors'] {
+        .exercise {
+            input,
+            span {
+                width: 45%;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        .logo {
+            width: 20%;
+            padding-bottom: 20%;
+        }
+
+        nav {
+            label {
+                display: block;
+                cursor: pointer;
+                margin: 0;
+                line-height: 45px;
+                text-align: center;
+                font-size: 2rem;
+            }
+
+            .burger-line {
+                display: block;
+                width: 30px;
+                height: 2px;
+                top: 23px;
+                right: 50px;
+                transition: 0.5s all;
+            }
+
+            .first-line {
+                top: 11px;
+            }
+
+            .fourth-line {
+                top: 34px;
+            }
+
+            input[id ='check-menu']:checked ~ .menu {
+                max-height: 500px;
+                font-size: 1.7rem;
+            }
+
+            input[id ='check-menu']:checked ~ .first-line,
+            input[id ='check-menu']:checked ~ .fourth-line {
+                display: none;
+            }
+
+            input[id ='check-menu']:checked ~ .second-line {
+                transform: rotate(45deg);
+            }
+
+            input[id ='check-menu']:checked ~ .third-line {
+                transform: rotate(-45deg);
+            }
+
+            .menu {
+                width: 50%;
+                max-height: 0;
+                font-size: 0;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+
+                span {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    section[id=toDo],
+    section[id=elements] {
+        padding-top: 25%;
+    }
+
+    .main,
+    section[id='colors'] {
+        margin-top: 20%;
+    }
+    section[id='colors'] {
+        .exercise {
+            input,
+            span {
+                width: 45%;
+            }
+        }
+    }
+}

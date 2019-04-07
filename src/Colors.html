@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDo list</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+<header class="header d-flex m-auto">
+    <a href="index.html" class="logo"></a>
+    <nav class="position-relative">
+        <input type="checkbox" name="nav" id="check-menu" class="d-none">
+        <label for="check-menu" class=" w-100 h-100 text-uppercase">menu</label>
+        <div class="burger-line first-line position-absolute"></div>
+        <div class="burger-line second-line position-absolute"></div>
+        <div class="burger-line third-line position-absolute"></div>
+        <div class="burger-line fourth-line position-absolute"></div>
+        <div class="menu text-uppercase d-flex justify-content-between align-content-center default-color">
+			<span>
+				<a href="toDoList.html">ToDo list</a>
+			</span>
+            <span>
+				<a href="elements.html">Elements form style</a>
+			</span>
+            <span>
+				<a href="#" class="current-page">Colors</a>
+			</span>
+            <span>
+                My another works
+                <span class="sub-item">
+                    <span>
+                        <a href="http://templatebino.zzz.com.ua/" target="_blank">Bino</a>
+                    </span>
+                    <span>
+                        <a href="https://daisy000webhost.000webhostapp.com/" target="_blank">Daysi</a>
+                    </span>
+                </span>
+            </span>
+        </div>
+    </nav>
+</header>
+
+<section id="colors" class="d-flex m-auto">
+    <div class="exercise">
+        <h3>RGB to HEX</h3>
+        <div class="color-group">
+            <input type="text" id="rgbValue" placeholder="input color in RGB format..." value="rgb(0,0,255)">
+            <span id="rgbResult"></span>
+        </div>
+        <button id="resultHex" class="button">Calc value!</button>
+    </div>
+    <div class="exercise">
+        <h3>HEX to RGB</h3>
+        <div class="color-group">
+            <input type="text" id="hexValue" placeholder="input color in HEX format..." value="ff0000">
+            <span id="hexResult"></span>
+        </div>
+        <button id="resultRgb" class="button">Calc value!</button>
+    </div>
+    <div class="exercise">
+        <h3>average value</h3>
+        <div class="color-group">
+            <input type="text" id="firstVal" placeholder="input first color..." value="rgb(0,0,255)">
+            <div></div>
+            <input type="text" id="secondVal" placeholder="input second color..." value="ff0000">
+            <div></div>
+        </div>
+        <span id="averageResult"></span>
+        <button id="resultAverage" class="button">Calc value!</button>
+    </div>
+</section>
+
+<script src="js/colors.js"></script>
+</body>
+</html>

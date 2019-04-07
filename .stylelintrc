@@ -1,9 +1,9 @@
 {
     "rules": {
         "max-nesting-depth": [
-            3,
+            4,
             {
-                "message": "Вложенности должна быть не более 3 элементов"
+                "message": "Вложенность должна быть не более 4 элементов"
             }
         ],
         "at-rule-semicolon-newline-after": [
@@ -15,19 +15,19 @@
         "block-no-empty": [
             true,
             {
-                message: "Пустых блоков быть не должно"
+                "message": "Пустых блоков быть не должно"
             }
         ],
         "declaration-colon-space-after": [
             "always",
             {
-                message: "Ожидается пробел после двоеточия"
+                "message": "Ожидается пробел после двоеточия"
             }
         ],
         "declaration-colon-space-before": [
             "never",
             {
-                message: "Перед двоеточием не нужен пробел"
+                "message": "Перед двоеточием не нужен пробел"
             }
         ],
         "declaration-block-no-duplicate-properties": [
@@ -45,7 +45,7 @@
         "declaration-block-semicolon-newline-after": [
             "always",
             {
-                message: "Нужна новая строка после точки с запятой"
+                "message": "Нужна новая строка после точки с запятой"
             }
         ],
         "declaration-block-single-line-max-declarations": [
@@ -63,13 +63,13 @@
         "block-closing-brace-newline-before": [
             "always",
             {
-                message: "Закрывающая скобка должна быть на новой строке"
+                "message": "Закрывающая скобка должна быть на новой строке"
             }
         ],
         "block-opening-brace-space-before": [
             "always",
             {
-                message: "Нужен пробел перед открывающей фигурной скобкой"
+                "message": "Нужен пробел перед открывающей фигурной скобкой"
             }
         ],
         "block-opening-brace-newline-after": [
@@ -81,25 +81,25 @@
         "declaration-no-important": [
             true,
             {
-                message: "Не следует использовать !important"
+                "message": "Не следует использовать !important"
             }
         ],
         "indentation": [
             4,
             {
-                message: "Отступы должны быть кратны 4-м пробелам"
+                "message": "Отступы должны быть кратны 4-м пробелам"
             }
         ],
         "length-zero-no-unit": [
             true,
             {
-                message: "Нулевым значениям можно не указывать единицы измерения"
+                "message": "Нулевым значениям можно не указывать единицы измерения"
             }
         ],
         "media-feature-colon-space-after": [
             "always",
             {
-                message: "Ожидается пробел после двоеточия в медиавыражении"
+                "message": "Ожидается пробел после двоеточия в медиавыражении"
             }
         ],
         "no-duplicate-selectors": [
@@ -111,19 +111,19 @@
         "number-leading-zero": [
             "always",
             {
-                message: "В числовом значении перед точкой ожидается ноль"
+                "message": "В числовом значении перед точкой ожидается ноль"
             }
         ],
         "number-max-precision": [
             3,
             {
-                message: "В значениях достаточно 3-х знаков после запятой"
+                "message": "В значениях достаточно 3-х знаков после запятой"
             }
         ],
         "selector-pseudo-element-colon-notation": [
             "double",
             {
-                message: "Для псевдоэлементов следует использовать двойное двоеточие"
+                "message": "Для псевдоэлементов следует использовать двойное двоеточие"
             }
         ],
         "selector-max-id": [
@@ -135,13 +135,13 @@
         "selector-list-comma-newline-after": [
             "always",
             {
-                message: "Каждый селектор должен быть на новой строке"
+                "message": "Каждый селектор должен быть на новой строке"
             }
         ],
         "string-quotes": [
             "single",
             {
-                message: "Ожидаются одинарные кавычки"
+                "message": "Ожидаются одинарные кавычки"
             }
         ],
         "selector-type-no-unknown": [

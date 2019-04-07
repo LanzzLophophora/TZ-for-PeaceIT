@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elements form style</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+<header class="header d-flex m-auto">
+    <a href="index.html" class="logo"></a>
+    <nav class="position-relative">
+        <input type="checkbox" name="nav" id="check-menu" class="d-none">
+        <label for="check-menu" class=" w-100 h-100 text-uppercase">menu</label>
+        <div class="burger-line first-line position-absolute"></div>
+        <div class="burger-line second-line position-absolute"></div>
+        <div class="burger-line third-line position-absolute"></div>
+        <div class="burger-line fourth-line position-absolute"></div>
+        <div class="menu text-uppercase d-flex justify-content-between align-content-center default-color">
+			<span>
+				<a href="toDoList.html">ToDo list</a>
+			</span>
+            <span>
+				<a href="#" class="current-page">Elements form style</a>
+			</span>
+            <span>
+				<a href="colors.html">Colors</a>
+			</span>
+            <span>
+                    My another works
+                    <span class="sub-item">
+                        <span>
+                            <a href="http://templatebino.zzz.com.ua/" target="_blank">Bino</a>
+                        </span>
+                        <span>
+                            <a href="https://daisy000webhost.000webhostapp.com/" target="_blank">Daysi</a>
+                        </span>
+                    </span>
+                </span>
+        </div>
+    </nav>
+</header>
+
+<section id="elements" class="d-flex m-auto">
+    <div class="exercise">
+        <input type="checkbox" id="chexboxExamples" checked>
+        <label for="chexboxExamples" class="title">Chekbox</label>
+        <div class="exapmles chexbox-examples">
+            <div class="one-example">
+                <label class="sq">
+                    <input type="checkbox">
+                    <div></div>
+                </label>
+                <label class="circle">
+                    <input type="checkbox">
+                    <div>
+                        <i class="fas fa-check"></i>
+                    </div>
+                </label>
+            </div>
+            <div class="another-example">
+                <a href="https://daisy000webhost.000webhostapp.com/#eighth-sector" target="_blank"> => Checkbox in
+                    template site</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <input type="checkbox" id="radioExamples">
+        <label for="radioExamples" class="title">Radio</label>
+        <form class="exapmles radios radio-examples">
+            <div class="one-example">
+                <label>
+                    <input type="radio" name="btn" checked>
+                    <div></div>
+                </label>
+
+                <label>
+                    <input type="radio" name="btn">
+                    <div></div>
+                </label>
+
+                <label>
+                    <input type="radio" name="btn">
+                    <div></div>
+                </label>
+            </div>
+            <div class="another-example">
+                <nav class="tabs d-flex">
+                    <input class="d-none" id="rd1" type="radio" name="btn"/>
+                    <label class="c-white text-center p-default pointer" for="rd1">Radio 1</label>
+
+                    <input class="d-none" id="rd2" type="radio" name="btn"/>
+                    <label class="c-white text-center p-default pointer" for="rd2">Radio 2</label>
+
+                    <input class="d-none" id="rd3" type="radio" name="btn"/>
+                    <label class="c-white text-center p-default pointer" for="rd3">Radio 3</label>
+
+                    <section class="tab-section d-none width100" data-tab="1">
+                        <img class="d-block width100" src="https://i.ytimg.com/vi/aYhAE53PtY4/maxresdefault.jpg"
+                             alt="sun1">
+                        <div class="p-default">Tab section 1</div>
+                    </section>
+
+                    <section class="tab-section d-none width100" data-tab="2">
+                        <img class="d-block width100"
+                             src="https://cs4.pikabu.ru/post_img/big/2016/05/11/1/1462920602128829457.jpg" alt="sun2">
+                        <div class="p-default">Tab section 2</div>
+                    </section>
+
+                    <section class="tab-section d-none width100" data-tab="3">
+                        <img class="d-block width100" src="https://cs8.pikabu.ru/post_img/
+			big/2016/05/11/1/1462920597120771632.jpg" alt="sun3">
+                        <div class="p-default">Tab section 3</div>
+                    </section>
+                </nav>
+            </div>
+        </form>
+    </div>
+
+    <div class="exercise">
+        <input type="checkbox" id="textFields">
+        <label for="textFields" class="title">Text fields</label>
+        <form class="exapmles text-fields">
+            <input type="text" placeholder="Your name:">
+            <textarea cols="30" rows="5" placeholder="Your message:"></textarea>
+        </form>
+    </div>
+
+    <div class="exercise">
+        <input type="checkbox" id="selectBlock">
+        <label for="selectBlock" class="title">Select</label>
+        <form class="exapmles select-block">
+            <div class="one-example">
+                <h5>With CSS</h5>
+                <div class="custom-select">
+                    <select name="customSelect">
+                        <option value="A">Option A</option>
+                        <option value="B">Option B</option>
+                        <option value="C">Option C</option>
+                    </select>
+                </div>
+            </div>
+            <div class="another-example">
+                <h5>With JS</h5>
+                <select id="select">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <div id="showSelect" class="accordion"></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="exercise">
+        <input type="checkbox" id="range">
+        <label for="range" class="title">Range</label>
+        <form class="exapmles range">
+            <div class="one-example">
+                <h5>With CSS</h5>
+                <input type="range" min="0" max="100" value="25" class="custom-range">
+            </div>
+            <div class="another-example">
+                <h5>With JS</h5>
+                <input type="range" min="-1000" max="5385" value="405" id="inputRange">
+                <div id="rangeBox">
+                    <div id="rangeBar"></div>
+                </div>
+                <span id="showValue"></span>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script src="modules/accordion/js.js"></script>
+<script src="modules/inputRange/js.js"></script>
+<script src="js/elements.js"></script>
+
+</body>
+</html>
