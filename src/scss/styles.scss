@@ -66,6 +66,7 @@ body {
             background-color: $main-color;
         }
     }
+
     .menu {
         margin: 0;
         padding: 0;
@@ -142,6 +143,36 @@ body {
         margin: auto;
         text-align: left;
         font-size: 1.6rem;
+    }
+
+    span {
+        display: block;
+        text-align: center;
+        padding: 5px;
+        margin: 5px auto;
+        width: 70%;
+        border: 1px solid $main-color;
+        border-radius: 5px;
+        font-size: 1.5rem;
+    }
+
+    .english {
+        width: 70%;
+        margin-right: 20px;
+        ul {
+            width: 80%;
+            text-align: left;
+        }
+
+        li {
+            list-style: decimal;
+        }
+    }
+
+
+    .task {
+        width: 30%;
+
     }
 }
 

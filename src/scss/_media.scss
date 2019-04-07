@@ -1,6 +1,7 @@
 @media (max-width: 780px) {
     .header {
         margin-top: 15px;
+
         .logo {
             width: 15%;
             padding-bottom: 15%;
@@ -8,6 +9,7 @@
 
         nav {
             width: 80%;
+
             .menu {
                 flex-direction: column;
                 width: 40%;
@@ -35,7 +37,21 @@
             }
         }
     }
+    .main {
+        flex-direction: column;
+
+        .task,
+        .english {
+            width: 80%;
+            margin: auto;
+        }
+
+        span {
+            width: 100%;
+        }
+    }
 }
+
 
 @media (max-width: 600px) {
     .header {

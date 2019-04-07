@@ -3,6 +3,7 @@
         .button {
             width: 10%;
         }
+
         span {
             span {
                 overflow: auto;
@@ -24,6 +25,7 @@ section[id='toDo'] {
 .input-field {
     align-items: center;
     justify-content: space-between;
+
     input {
         outline: none;
         min-height: 30px;
@@ -35,10 +37,12 @@ section[id='toDo'] {
         font-size: 1.7rem;
         padding: 4px;
     }
+
     .button {
         width: 20%;
         text-transform: uppercase;
     }
+
     .warning {
         background-color: red;
         font-size: 1rem;

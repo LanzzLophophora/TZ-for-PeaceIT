@@ -81,7 +81,7 @@ section[id='elements'] {
             font-size: large;
             margin: 5px;
         }
-        
+
         a:hover {
             color: #fff;
         }
@@ -213,10 +213,12 @@ section[id='elements'] {
                     font-size: 1.4rem;
                     color: $main-color;
                 }
+
                 select[name='customSelect']:focus {
                     outline: none;
                     border-color: $main-color;
                 }
+
                 select[name='customSelect']:hover {
                     cursor: pointer;
                 }
@@ -296,6 +298,7 @@ section[id='elements'] {
             text-align: center;
             align-items: center;
         }
+
         .one-example {
             input {
                 display: block;
@@ -346,6 +349,7 @@ section[id='elements'] {
                 background-size: cover;
             }
         }
+
         .another-example {
             [id = rangeBox] {
                 width: 320px;
@@ -366,24 +370,30 @@ section[id='elements'] {
                 cursor: pointer;
                 box-shadow: 1px 1px black;
             }
+
             span {
                 margin: 20px auto;
                 padding: 10px 15px;
             }
         }
     }
+
     input[id='chexboxExamples']:checked ~ .chexbox-examples {
         display: flex;
     }
+
     input[id='radioExamples']:checked ~ .radio-examples {
         display: flex;
     }
+
     input[id='textFields']:checked ~ .text-fields {
         display: flex;
     }
+
     input[id='selectBlock']:checked ~ .select-block {
         display: flex;
     }
+
     input[id='range']:checked ~ .range {
         display: flex;
     }
