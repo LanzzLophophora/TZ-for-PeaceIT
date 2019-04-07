@@ -155,8 +155,6 @@ function ColorsCalc() {
         averageCol.length = Math.min(value1.length, value2.length);
 
         return '#' + averageCol.join('');
-        // return 'rgb(' + averageCol.join(',') + ')';
-
     };
 }
 
