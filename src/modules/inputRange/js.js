@@ -71,7 +71,7 @@
             setStyleLeft(inputRange.rangeBar, inputRange.leftPosition);
             inputRange.value = (inputRange.leftPosition * inputRange.persent) + +inputRange.min;
             inputRange.realInput.value =  inputRange.value;
-            console.log(inputRange.realInput.value);
+            // console.log(inputRange.realInput.value);
             if (inputRange.showingValuePlace) {
                 inputRange.showingValuePlace.textContent = inputRange.realInput.value;
             }
