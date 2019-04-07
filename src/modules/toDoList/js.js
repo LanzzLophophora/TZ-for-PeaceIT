@@ -2,42 +2,54 @@
     function Module () {
         this.name = 'My ToDo list';
         this.version = '1.0.0';
-        this.createToDolist = function (place) {
-            if (!place) {
+        this.createToDolist = function (options) {
+            if (!options.place) {
                 return null;
             }
-            return new ToDoList(place);
+            return new ToDoList(options);
         }
     }
 
-    function ToDoList(place) {
-        this.place = typeof place === 'string' ? document.querySelector(place) : place;
+    function ToDoList(options) {
+        this.place = typeof options.place === 'string' ? document.querySelector(options.place) : options.place;
         this.place.innerHTML = '';
-        // this.taskArray = [];
-
-
-        addInputTask(this.place);
+        this.taskArray = options.taskArray || {};
 
         var taskList = document.createElement('div');
         taskList.setAttribute('id', 'taskList');
         taskList.className = 'task-list';
         this.place.appendChild(taskList);
-
-        localStorage.setItem('ToDoList', JSON.stringify(taskList));
+        this.taskList = taskList;
+        addInputTask(this);
+        if (Object.keys(this.taskArray).length !== 0) {
+            for (var key in this.taskArray) {
+                showTask(this.taskList, this.taskArray[key], this);
+            }
+        }
     }
 
-    function addInputTask(place) {
+    function addInputTask(todoList) {
         var inputField = document.createElement('span'),
             input = document.createElement('input'),
-            buttonCreate;
+            buttonCreate,
+            buttonDelete;
         input.setAttribute('type', 'text');
         input.setAttribute('name', 'task');
         buttonCreate = createButton('Create task!');
-        addFuncToCreateButton(buttonCreate, input);
+        buttonDelete = createButton('Delete ToDo List!');
+        addFuncToCreateButton(buttonCreate, input, todoList);
+        addFuncToDeleteButton(buttonDelete, todoList);
+
+        input.onkeydown = function(e){
+            if (e.key === 'Enter') {
+                buttonCreate.onclick();
+            }
+        };
+
         inputField.appendChild(input);
         inputField.appendChild(buttonCreate);
         inputField.className = 'input-field w-100 d-flex';
-        place.appendChild(inputField);
+        todoList.place.insertBefore(inputField, todoList.taskList);
     }
 
     function createButton(name) {
@@ -45,161 +57,93 @@
         button.className = 'button';
         button.textContent = name;
         return button;
+    }
+
+    function addFuncToCreateButton(button, input, todoList){
+        button.onclick = function () {
+            if (input.value.isEmpty()){
+                return false;
+            }
+            var id = randomInteger(0, 10000) + '',
+                value = input.value;
+
+            input.value = '';
+
+            todoList.taskArray[id] = {
+                id: id,
+                value: value,
+                done: false
+            };
+
+            showTask(todoList.taskList ,todoList.taskArray[id], todoList);
+            localStorage.setItem('taskArray', JSON.stringify(todoList.taskArray));
+        }
+    }
+
+    function addFuncToDeleteButton(buttonDelete, todoList) {
+
+    }
+
+    function showTask(place, task, toDoList) {
+
+        var value = task.value,
+            id = task.id,
+            taskSpan = document.createElement('span'),
+            span = document.createElement('span'),
+            doneButton,
+            deleteButton;
+        doneButton = createButton('done');
+        doneButton.classList += ' done-button';
+        deleteButton = createButton('delete');
+        deleteButton.classList += ' delete-button';
+
+        span.textContent = value;
+        taskSpan.appendChild(doneButton);
+        taskSpan.appendChild(span);
+        taskSpan.appendChild(deleteButton);
+
+        if(task.done) {
+            taskSpan.classList += 'done';
+        }
+
+        addFuncToDoneButton(doneButton, toDoList, id);
+        addFuncTodeleteButton(deleteButton, toDoList, id);
+
+        place.appendChild(taskSpan);
+    }
+
+    function addFuncToDoneButton(button, todoList, id) {
+        button.onclick = function () {
+            button.parentNode.classList.toggle('done');
+            todoList.taskArray[id].done = todoList.taskArray[id].done!==true;
+            localStorage.setItem('taskArray', JSON.stringify(todoList.taskArray));
+        }
+    }
+
+    function addFuncTodeleteButton(button, toDoList, id) {
+        button.onclick = function () {
+            if (button.parentNode.className.indexOf('done') < 0){
+                if(confirm('This task has not yet been completed. Do you really want to delete it?')) {
+                    button.parentNode.remove();
+                    delete toDoList.taskArray[id];
+                    localStorage.setItem('taskArray', JSON.stringify(toDoList.taskArray));
+                }
+            } else {
+                button.parentNode.remove();
+                delete toDoList.taskArray[id];
+                localStorage.setItem('taskArray', JSON.stringify(toDoList.taskArray));
+            }
+        }
+    }
+
+    function randomInteger(min, max) {
+        var rand = min - 0.5 + Math.random() * (max - min + 1)
+        rand = Math.round(rand);
+        return rand;
     }
 
     String.prototype.isEmpty = function() {
         return (this.length === 0 || !this.trim());
     };
-
-    function addFuncToCreateButton(button, input){
-        button.onclick = function () {
-            if (input.value.isEmpty()){
-                return false;
-            }
-            var value = input.value,
-                task = document.createElement('span'),
-                span = document.createElement('span'),
-                doneButton,
-                deleteButton;
-            doneButton = createButton('done');
-            doneButton.classList += ' done-button';
-            deleteButton = createButton('delete');
-            deleteButton.classList += ' delete-button';
-
-            span.textContent = value;
-            task.appendChild(doneButton);
-            task.appendChild(span);
-            task.appendChild(deleteButton);
-
-            addFuncToDoneButton(doneButton);
-            addFuncTodeleteButton(deleteButton);
-            taskList.appendChild(task);
-            input.value = '';
-        }
-    }
-
-    function addFuncToDoneButton(button) {
-        button.onclick = function () {
-            button.parentNode.classList.toggle('done');
-        }
-    }
-
-    function addFuncTodeleteButton(button) {
-        button.onclick = function () {
-            if (button.parentNode.className.indexOf('done') < 0){
-                if(confirm('This task has not yet been completed. Do you really want to delete it?')) {
-                    button.parentNode.remove();
-                }
-            } else {
-                button.parentNode.remove();
-            }
-        }
-    }
-
     window.myToDoList = new Module();
 })();
-
-
-/*
-(function() {
-    function Module () {
-        this.name = 'My ToDo list';
-        this.version = '1.0.0';
-
-        this.createToDolist = function (place) {
-            if (!place) {
-                return null;
-            }
-            return new ToDoList(place);
-        }
-    }
-
-    function ToDoList(place) {
-        this.place = typeof place === 'string' ? document.querySelector(place) : place;
-        this.place.innerHTML = '';
-        this.taskList = [];
-        this.addInputTask = addInputTask(this);
-
-        var taskListPlace = document.createElement('div');
-
-        taskListPlace.setAttribute('id', 'taskList');
-        taskListPlace.className = 'task-list';
-        this.place.appendChild(taskListPlace);
-
-        localStorage.setItem('ToDoList', JSON.stringify(this.taskList));
-
-    }
-
-    function addInputTask(list) {
-        var inputField = document.createElement('span'),
-            input = document.createElement('input'),
-            buttonCreate;
-        input.setAttribute('type', 'text');
-        input.setAttribute('name', 'task');
-        buttonCreate = createButton('Create task!');
-        addFuncToCreateButton(buttonCreate, input, list);
-        inputField.appendChild(input);
-        inputField.appendChild(buttonCreate);
-        inputField.className = 'input-field w-100 d-flex';
-        list.place.appendChild(inputField);
-
-        list.taskList.push(inputField);
-    }
-
-    function createButton(name) {
-        var button = document.createElement('button');
-        button.className = 'button';
-        button.textContent = name;
-        return button;
-    }
-
-    function addFuncToCreateButton(button, input, list){
-        button.onclick = function () {
-            var value = input.value,
-                task = document.createElement('span'),
-                span = document.createElement('span'),
-                doneButton,
-                deleteButton;
-            doneButton = createButton('done');
-            doneButton.classList += ' done-button';
-            deleteButton = createButton('delete');
-            deleteButton.classList += ' delete-button';
-
-            span.textContent = value;
-            task.appendChild(doneButton);
-            task.appendChild(span);
-            task.appendChild(deleteButton);
-
-
-            addFuncToDoneButton(doneButton, list);
-            addFuncTodeleteButton(deleteButton, list);
-
-            // console.log(value);
-            list.taskList.appendChild(task);
-            input.value = '';
-        }
-    }
-
-    function addFuncToDoneButton(button, list) {
-        button.onclick = function () {
-            button.parentNode.classList.toggle('done');
-            localStorage.setItem(list.taskList);
-        }
-    }
-
-    function addFuncTodeleteButton(button, list) {
-        button.onclick = function () {
-            if (button.parentNode.className.indexOf('done') < 0){
-                if(confirm('This task has not yet been completed. Do you really want to delete it?')) {
-                    button.parentNode.remove();
-                    list.taskList.delete;
-                }
-            } else {
-                button.parentNode.remove();
-            }
-        }
-    }
-
-    window.myToDoList = new Module();
-})();*/
-
