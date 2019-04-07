@@ -36,18 +36,18 @@
         input.setAttribute('type', 'text');
         input.setAttribute('name', 'task');
         buttonCreate = createButton('Create task!');
-        buttonDelete = createButton('Delete ToDo List!');
+        buttonDelete = createButton('Delete task-list!');
+        buttonDelete.classList += ' warning';
         addFuncToCreateButton(buttonCreate, input, todoList);
         addFuncToDeleteButton(buttonDelete, todoList);
-
         input.onkeydown = function(e){
             if (e.key === 'Enter') {
                 buttonCreate.onclick();
             }
         };
-
         inputField.appendChild(input);
         inputField.appendChild(buttonCreate);
+        inputField.appendChild(buttonDelete);
         inputField.className = 'input-field w-100 d-flex';
         todoList.place.insertBefore(inputField, todoList.taskList);
     }
@@ -81,7 +81,13 @@
     }
 
     function addFuncToDeleteButton(buttonDelete, todoList) {
-
+        buttonDelete.onclick = function () {
+            if (confirm('Are you sure?')) {
+                todoList.taskArray = {};
+                localStorage.setItem('taskArray', JSON.stringify(toDoList.taskArray));
+                todoList.taskList.innerHTML = '';
+            }
+        }
     }
 
     function showTask(place, task, toDoList) {
