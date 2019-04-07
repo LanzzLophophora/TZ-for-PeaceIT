@@ -54,17 +54,17 @@
     <div class="exercise">
         <h3>HEX to RGB</h3>
         <div class="color-group">
-            <input type="text" id="hexValue" placeholder="input color in HEX format..." value="ff0000">
+            <input type="text" id="hexValue" maxlength="9" placeholder="input color in HEX format..." value="ff0000">
             <span id="hexResult"></span>
         </div>
         <button id="resultRgb" class="button">Calc value!</button>
     </div>
     <div class="exercise">
-        <h3>average value</h3>
+        <h3>average value (only hex-format)</h3>
         <div class="color-group">
-            <input type="text" id="firstVal" placeholder="input first color..." value="rgb(0,0,255)">
+            <input type="text" id="firstVal" maxlength="9" placeholder="input first color..." value="#0000ff">
             <div></div>
-            <input type="text" id="secondVal" placeholder="input second color..." value="ff0000">
+            <input type="text" id="secondVal" maxlength="9" placeholder="input second color..." value="ff0000">
             <div></div>
         </div>
         <span id="averageResult"></span>
