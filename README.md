@@ -9,7 +9,6 @@ English test is located in the index.html file. One can move to other pages from
 The **logo** in the `Header` redirects to the **_PeaceIT_**-school website from the main page, and to the main page (index.html) from other pages. In the tab named “`My website templates`” there are links to my last two templates, made only in html-css. The stylization of this example can be conditional and general. 
 ***
 #### ToDo List
-
 `ToDo List` is located in the _`toDoList.html`_ file.
 `ToDo List` is bound to `Locale Storage`. If there is no task list there, a "create" button appears. Then we work with `Locale Storage`. After each adding, deleting, or marking "Done", the object with the tasks is saved in LS.
 The method **`createToDolist`()** of the variable **`myToDoList`** is responsible for the task list creation. 
